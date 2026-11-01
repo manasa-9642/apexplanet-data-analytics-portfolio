@@ -1,0 +1,12 @@
+
+TASK 3 - CUSTOMER SEGMENTATION SUMMARY
+
+Total Customers: 941
+Number of Segments: 3
+Highest Sales Segment: Medium-Value Customers
+
+SEGMENT SUMMARY:
+               Segment  Customers  Total_Sales  Average_Sales  Average_Quantity  Average_Age
+  High-Value Customers         50  15899887.68      317997.75             11.76        41.75
+   Low-Value Customers        525  35959972.28       68495.19              3.54        41.29
+Medium-Value Customers        366  86244451.41      235640.58              8.06        41.39

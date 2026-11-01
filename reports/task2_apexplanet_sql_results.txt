@@ -1,0 +1,154 @@
+
+============================================================
+1. Monthly Sales Trend
+============================================================
+
+        SELECT Order_Month,
+               ROUND(SUM(Total_Sales), 2) AS total_sales
+        FROM sales
+        GROUP BY Order_Month
+        ORDER BY Order_Month;
+    
+RESULT:
+Order_Month  total_sales
+    2025-01  10044599.63
+    2025-02  11017185.08
+    2025-03  13051317.45
+    2025-04  12222700.17
+    2025-05  10984689.25
+    2025-06  12912332.64
+    2025-07  11746226.80
+    2025-08   9189743.99
+    2025-09   9179896.29
+    2025-10  12500936.50
+    2025-11  12145389.14
+    2025-12  12299904.44
+    2026-01    809389.99
+
+
+============================================================
+2. Top 5 Products by Sales
+============================================================
+
+        SELECT Product,
+               ROUND(SUM(Total_Sales), 2) AS total_sales
+        FROM sales
+        GROUP BY Product
+        ORDER BY total_sales DESC
+        LIMIT 5;
+    
+RESULT:
+Product  total_sales
+ Laptop  25301994.63
+ Mobile  25300953.42
+   Book  24971515.81
+   Rice  21431117.47
+  Chair  21262834.25
+
+
+============================================================
+3. Sales by Category
+============================================================
+
+        SELECT Category,
+               ROUND(SUM(Total_Sales), 2) AS total_sales,
+               COUNT(*) AS total_orders
+        FROM sales
+        GROUP BY Category
+        ORDER BY total_sales DESC;
+    
+RESULT:
+   Category  total_sales  total_orders
+Electronics  50602948.05           352
+  Education  24971515.81           176
+    Grocery  21431117.47           150
+  Furniture  21262834.25           158
+    Fashion  19835895.79           156
+
+
+============================================================
+4. Sales by City
+============================================================
+
+        SELECT City,
+               ROUND(SUM(Total_Sales), 2) AS total_sales,
+               COUNT(*) AS total_orders
+        FROM sales
+        GROUP BY City
+        ORDER BY total_sales DESC;
+    
+RESULT:
+     City  total_sales  total_orders
+    Patna  20685570.55           147
+   Mumbai  18586479.81           130
+  Kolkata  18574031.24           131
+Bengaluru  18418711.34           119
+Hyderabad  17166766.87           125
+    Delhi  16097079.00           125
+     Gaya  14380859.39           117
+     Pune  14194813.17            98
+
+
+============================================================
+5. Sales by Age Group
+============================================================
+
+        SELECT Age_Group,
+               ROUND(SUM(Total_Sales), 2) AS total_sales,
+               COUNT(*) AS total_orders
+        FROM sales
+        GROUP BY Age_Group
+        ORDER BY total_sales DESC;
+    
+RESULT:
+Age_Group  total_sales  total_orders
+    36-45  31392231.83           222
+    26-35  29151448.27           216
+    46-55  28216508.63           202
+    56-65  27386970.92           196
+    18-25  21957151.72           156
+
+
+============================================================
+6. Sales by Gender
+============================================================
+
+        SELECT Gender,
+               ROUND(SUM(Total_Sales), 2) AS total_sales,
+               COUNT(*) AS total_orders
+        FROM sales
+        GROUP BY Gender
+        ORDER BY total_sales DESC;
+    
+RESULT:
+Gender  total_sales  total_orders
+  Male  71657355.44           505
+Female  66446955.93           487
+
+
+============================================================
+7. Top 10 Customers by Total Sales
+============================================================
+
+        SELECT Customer_ID,
+               Customer_Name,
+               COUNT(*) AS total_orders,
+               ROUND(SUM(Total_Sales), 2) AS total_sales
+        FROM sales
+        GROUP BY Customer_ID, Customer_Name
+        ORDER BY total_sales DESC
+        LIMIT 10;
+    
+RESULT:
+Customer_ID Customer_Name  total_orders  total_sales
+   CUST2062  Customer_254             1     493677.5
+   CUST4706  Customer_200             1     492174.1
+   CUST1711   Customer_36             1     490866.4
+   CUST4869  Customer_392             1     485667.8
+   CUST7416  Customer_191             1     482551.9
+   CUST9551  Customer_230             1     474935.9
+   CUST8381  Customer_112             1     473144.2
+   CUST4037  Customer_205             1     470798.6
+   CUST4003  Customer_305             1     468522.0
+   CUST4584  Customer_138             1     462701.3
+

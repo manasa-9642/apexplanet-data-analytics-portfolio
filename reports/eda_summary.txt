@@ -1,0 +1,10 @@
+
+TASK 2 - EXPLORATORY DATA ANALYSIS SUMMARY
+
+Total Orders: 992
+Total Sales: INR 138,104,311.37
+Average Order Value: INR 139,218.06
+
+Top Category by Sales: Electronics
+Top Product by Sales: Laptop
+Top City by Sales: Patna
